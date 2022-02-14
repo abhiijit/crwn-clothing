@@ -12,31 +12,36 @@ export class directory extends Component {
             title: 'Hats',
             imageURL : "https://i.ibb.co/cvpntL1/hats.png",
             id: 1,
-            size:'large'
+            size:'large',
+            linkUrl: 'hats'
             },
             {
                 title: 'Jackets',
                 imageURL : "https://i.ibb.co/px2tCc3/jackets.png",
                 id: 2,
-                size:'large'
+                size:'large',
+                linkUrl: ''
                 },
                 {
                     title: 'Sneakers',
                     imageURL : "https://i.ibb.co/0jqHpnp/sneakers.png",
                     id: 3,
-                    size:'large'
+                    size:'large',
+                    linkUrl: ''
                     },
                     {
                         title: 'Womens',
                         imageURL : "https://i.ibb.co/GCCdy8t/womens.png",
                         id: 4,
-                        size:'large'
+                        size:'large',
+                        linkUrl: ''
                         },
                         {
                             title: 'Mens',
                             imageURL : "https://i.ibb.co/R70vBrQ/men.png",
                             id: 5,
-                            size:'large'
+                            size:'large',
+                            linkUrl: ''
                             },
         ]
     }
@@ -44,8 +49,8 @@ export class directory extends Component {
   render() {
     return (
       <>
-        {this.state.sections.map(({title, imageURL, id, size}) => (
-            <Menuitem key={id} title={title} imageURL={imageURL} size={size}/>
+        {this.state.sections.map(({id, ...otherSectionsProps}) => (
+            <Menuitem key={id} {...otherSectionsProps}/>
         ))}
       </>
     )
